@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Hind", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: #FF9F1A;
+    --background: #F8F9FA;
+    --surface: #FFFFFF;
+    --surface2: #F1F5F9;
+    --border: #E2E8F0;
+    --text: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --error: #EF4444;
+  }
+
+  .dark {
+    --primary: #FF9F1A;
+    --background: #09090B;
+    --surface: #0D0D10;
+    --surface2: #151517;
+    --border: #242429;
+    --text: #FAFAFA;
+    --text-secondary: #9CA3AF;
+    --text-muted: #4B5563;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--text)] font-sans transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-[var(--surface)] border border-[var(--border)] rounded-3xl shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-linear-to-br from-[#FF9F1A] to-[#E8860D] text-[#09090B] font-bold py-4 px-6 rounded-2xl transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+  }
+}
